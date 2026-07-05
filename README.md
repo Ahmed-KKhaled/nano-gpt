@@ -53,7 +53,7 @@ Next Character Prediction
 
 ---
 
-# ⚙️ Core Components
+#  Core Components
 
 ### 🔹 Token Embedding
 Maps each character into a learnable embedding vector.
@@ -96,7 +96,7 @@ Dataset contains:
 
 ---
 
-# 🏗️ Training Pipeline
+#  Training Pipeline
 
 1. Load Tiny Shakespeare dataset
 2. Build character vocabulary
@@ -109,7 +109,7 @@ Dataset contains:
 
 ---
 
-# 📊 Training Configuration
+#  Training Configuration
 
 | Hyperparameter | Value |
 |---------------|------:|
@@ -124,7 +124,7 @@ Dataset contains:
 
 ---
 
-# 🔍 Implemented Concepts
+#  Implemented Concepts
 
 ✅ Character Tokenization
 
@@ -150,7 +150,7 @@ Dataset contains:
 
 ---
 
-# ✨ Example Generated Text
+#  Example Generated Text
 
 ```
 
@@ -248,7 +248,7 @@ During this project I implemented and understood:
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 - Python
 - PyTorch
