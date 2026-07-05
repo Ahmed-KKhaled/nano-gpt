@@ -169,9 +169,9 @@ My heart is full of sorrow...
 ### Clone Repository
 
 ```bash
-git clone https://github.com/YourUsername/gpt-from-scratch.git
+git clone https://github.com/Ahmed-KKhaled/nano-gpt
 
-cd gpt-from-scratch
+cd nano-gpt
 ```
 
 ### Install Dependencies
