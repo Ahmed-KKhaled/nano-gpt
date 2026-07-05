@@ -3,8 +3,8 @@ import torch.nn as nn
 from torch.nn import functional as F
 
 # hyperparameters
-batch_size = 4 # how many independent sequences will we process in parallel?
-block_size = 16 # what is the maximum context length for predictions?
+batch_size = 4   # Number of independent text sequences processed in parallel
+block_size = 16  # Maximum context length (in tokens) used for next-token prediction
 max_iters = 5000
 eval_interval = 500
 learning_rate = 1e-3
@@ -74,8 +74,8 @@ class Head(nn.Module):
         self.dropout = nn.Dropout(dropout)
 
     def forward(self, x):
-        # input of size (batch, time-step, channels)
-        # output of size (batch, time-step, head size)
+        # x of size (batch, time-step, channels) (B, T, C)
+        # output of size (batch, time-step, head size), (B, T, hs)
         B,T,C = x.shape
         k = self.key(x)   # (B,T,hs)
         q = self.query(x) # (B,T,hs)
@@ -210,10 +210,10 @@ for iter in range(max_iters):
         losses = estimate_loss()
         print(f"step {iter}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}")
 
-    # sample a batch of data
+    # sampling a batch
     xb, yb = get_batch('train')
 
-    # evaluate the loss
+    # compute the loss
     logits, loss = model(xb, yb)
     optimizer.zero_grad(set_to_none=True)
     loss.backward()
@@ -222,4 +222,3 @@ for iter in range(max_iters):
 # generate from the model
 context = torch.zeros((1, 1), dtype=torch.long, device=device)
 print(decode(m.generate(context, max_new_tokens=500)[0].tolist()))
-#open('more.txt', 'w').write(decode(m.generate(context, max_new_tokens=10000)[0].tolist()))
