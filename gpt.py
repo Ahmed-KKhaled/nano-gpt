@@ -3,18 +3,19 @@ import torch.nn as nn
 from torch.nn import functional as F
 
 # hyperparameters
-batch_size = 4   # Number of independent text sequences processed in parallel
-block_size = 16  # Maximum context length (in tokens) used for next-token prediction
+batch_size = 64 # how many independent sequences will we process in parallel?
+block_size = 256 # what is the maximum context length for predicting the next token 
 max_iters = 5000
 eval_interval = 500
-learning_rate = 1e-3
+learning_rate = 3e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 eval_iters = 200
-n_embd = 96
-n_head = 8
-n_layer = 3
+n_embd = 384
+n_head = 6
+n_layer = 6
 dropout = 0.2
 # ------------
+
 
 torch.manual_seed(1337)
 
